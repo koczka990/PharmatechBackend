@@ -16,6 +16,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+// docker action test
+
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
