@@ -11,8 +11,16 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    
     steps:
-    - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: docker build . --file PharmatechBackend/Dockerfile --tag backend:latest
+      -
+        name: Build and push
+        uses: docker/build-push-action@v3
+        with:
+          context: ./PharmatechBackend/
+          push: true
+          tags: user/pharmatech/backend:latest
+    #steps:
+    #- uses: actions/checkout@v3
+    #- name: Build the Docker image
+    #  run: docker build . --file PharmatechBackend/Dockerfile --tag backend:latest
